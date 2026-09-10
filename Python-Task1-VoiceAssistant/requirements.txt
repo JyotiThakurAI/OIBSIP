@@ -1,4 +1,0 @@
-SpeechRecognition>=3.10.0
-pyttsx3>=2.90
-# PyAudio is required for microphone input. Install it separately if needed:
-# py -m pip install PyAudio

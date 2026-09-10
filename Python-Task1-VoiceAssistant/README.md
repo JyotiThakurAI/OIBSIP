@@ -1,57 +1,91 @@
 # Python Voice Assistant
 
-A beginner-friendly voice assistant built for the Oasis Infobyte Python Programming internship.
+A simple beginner-friendly Python voice assistant built for the Oasis Infobyte Python Programming internship.
 
 ## Features
 
-- Captures commands from a microphone using `SpeechRecognition`.
-- Responds to greetings with a predefined message.
-- Reports the current time and date.
-- Opens a Google search for a spoken topic.
-- Uses `pyttsx3` for spoken responses.
-- Handles silence, misunderstood speech, unavailable speech services, and missing microphones gracefully.
-- Includes a text mode for testing on computers without a microphone.
+* Responds to a greeting.
+* Tells the current time.
+* Tells today's date.
+* Opens Google in the web browser.
+* Uses `pyttsx3` to speak responses.
+* Takes commands from the keyboard.
+* Stops when the user types `stop`.
 
-## Setup
+## Technologies Used
+
+* Python
+* `pyttsx3`
+* `datetime`
+* `webbrowser`
+
+## Installation
+
+Install the `pyttsx3` package using:
 
 ```powershell
-py -m pip install -r requirements.txt
-py -m pip install PyAudio
+py -m pip install pyttsx3
 ```
 
-If PyAudio does not install on your system, use the text mode to test the command logic. Microphone mode requires a working microphone and an internet connection for Google's speech recognition service.
+The other modules used in this project (`datetime` and `webbrowser`) are included with Python.
 
-## Run
+## How to Run
 
-Microphone mode:
+Open the project folder in VS Code or a terminal and run:
 
 ```powershell
 py main.py
 ```
 
-Text demo mode:
+Then type a command when you see:
 
-```powershell
-py main.py --text
+```text
+You:
 ```
+
+## Available Commands
 
 Try these commands:
 
-- `hello`
-- `what is the time`
-- `what is today's date`
-- `search for Python tutorials`
-- `stop`
+* `hello`
+* `what is the time`
+* `what is the date`
+* `google`
+* `stop`
 
-## Privacy
+## Example
 
-In microphone mode, audio is captured only while the assistant is listening and is sent to the Google speech recognition service through the `SpeechRecognition` library for transcription. The project does not store audio, transcripts, or personal information. Text mode keeps input local. Browser searches are sent to Google when the user requests a search.
+```text
+Assistant: Hello! I am your voice assistant.
+
+You: hello
+Assistant: Hello! How can I help you?
+
+You: what is the time
+Assistant: The current time is 10:30 PM
+
+You: what is the date
+Assistant: Today's date is 11 September 2026
+
+You: google
+Assistant: Opening Google
+
+You: stop
+Assistant: Goodbye!
+```
 
 ## Project Structure
 
 ```text
 Python-Task1-VoiceAssistant/
 |-- main.py
-|-- README.md
-`-- requirements.txt
+`-- README.md
 ```
+
+## How It Works
+
+1. The program starts the voice assistant.
+2. The user enters a command using the keyboard.
+3. The program checks the command using `if`, `elif`, and `else`.
+4. The assistant performs the requested action.
+5. The assistant continues until the user types `stop`.
